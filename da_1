@@ -2,4 +2,4 @@ with cte_1 as (select city, sum(amount) as total_amount from credit_cards_trxns 
 cte_2 as (select sum(amount) as total_spend from credit_cards_trxns)
 select top 5 cte_1.* , round((total_amount/total_spend)*100,2) as percentage_contri 
 from cte_1 join cte_2 on 1=1
-order by total_amount desc
+
